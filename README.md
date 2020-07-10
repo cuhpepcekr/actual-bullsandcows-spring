@@ -40,3 +40,9 @@
 * 게임 기록의 간단한 정보를 목록으로 출력.  
 #### 게임 기록 상세 페이지
 * 게임 기록의 상세한 정보를 출력.  
+
+
+## 초기 환경 설정
+### Docker
+#### mySQL
+docker run -d -p 2206:3306 --name actual-bullsandcows-docker -e MYSQL_ROOT_PASSWORD=rootpasswordvalue -e MYSQL_DATABASE=databasevalue -e MYSQL_USER=uservalue -e MYSQL_PASSWORD=passwordvalue mysql:latest --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
