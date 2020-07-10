@@ -46,3 +46,6 @@
 ### Docker
 #### mySQL
 docker run -d -p 2206:3306 --name actual-bullsandcows-docker -e MYSQL_ROOT_PASSWORD=rootpasswordvalue -e MYSQL_DATABASE=databasevalue -e MYSQL_USER=uservalue -e MYSQL_PASSWORD=passwordvalue mysql:latest --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+### Spring
+#### 테스트 데이터 생성
+BullsandcowsApplicationTests.class 실행.
