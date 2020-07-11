@@ -43,6 +43,7 @@
 
 
 ## 초기 환경 설정
+### 설치 및 설정, 실행
 1. Java SE Development Kit 8u251 설치, 환경 변수 설정  
 https://www.oracle.com/kr/java/technologies/javase/javase-jdk8-downloads.html  
 2. Git 설치  
@@ -60,3 +61,14 @@ git clone https://github.com/cuhpepcekr/actual-bullsandcows-spring.git
 경로 : C:\Users\Manager\project-spring/actual-bullsandcows-spring  
 8. 스키마, 데이터 생성
 BullsandcowsApplicationTests.class 실행.
+### 확인된 오류 및 해결 방안
+* Intellij에서 Project import시 Gradle에서 오류 발생  
+Gradle 버전을 낮추어서 실행.  
+```$ ./gradlew wrapper --gradle-version 5.6.4  ```  
+위 명령어를 실행하려고 하는데 아래와 같은 오류가 발생할 때  
+```bash: ./gradlew: Permission denied  ```  
+아래 명령어 실행하면 Gradle 설치 가능.  
+```$ chmod +x gradlew  ```  
+* Test 코드에서 builder() 인식하지 못할 때 (lombok 설정 오류)  
+https://stackoverflow.com/questions/56151870/lombok-builder-not-recognised-by-intellij  
+https://stackoverflow.com/questions/9424364/cant-compile-project-when-im-using-lombok-under-intellij-idea  
