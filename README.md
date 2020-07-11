@@ -43,9 +43,20 @@
 
 
 ## 초기 환경 설정
-### Docker
-#### mySQL
-docker run -d -p 2206:3306 --name actual-bullsandcows-docker -e MYSQL_ROOT_PASSWORD=rootpasswordvalue -e MYSQL_DATABASE=databasevalue -e MYSQL_USER=uservalue -e MYSQL_PASSWORD=passwordvalue mysql:latest --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-### Spring
-#### 테스트 데이터 생성
+1. Java SE Development Kit 8u251 설치, 환경 변수 설정  
+https://www.oracle.com/kr/java/technologies/javase/javase-jdk8-downloads.html  
+2. Git 설치  
+https://git-scm.com/downloads  
+3. IntelliJ IDEA 설치  
+https://www.jetbrains.com/ko-kr/idea/download/  
+4. Docker 설치  
+https://www.docker.com/get-started  
+5. Docker에서 MySQL 설치
+docker run -d -p 2206:3306 --name actual-bullsandcows-docker -e MYSQL_ROOT_PASSWORD=rootpasswordvalue -e MYSQL_DATABASE=databasevalue -e MYSQL_USER=uservalue -e MYSQL_PASSWORD=passwordvalue mysql:latest --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci  
+6. Git clone  
+경로 : C:\Users\Manager\project-spring\  
+git clone https://github.com/cuhpepcekr/actual-bullsandcows-spring.git  
+7. IntelliJ로 프로젝트 열기
+경로 : C:\Users\Manager\project-spring/actual-bullsandcows-spring  
+8. 스키마, 데이터 생성
 BullsandcowsApplicationTests.class 실행.
