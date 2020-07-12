@@ -78,3 +78,7 @@ Gradle 버전을 낮추어서 실행.
 ```bash: ./gradlew: Permission denied  ```  
 아래 명령어 실행하면 Gradle 설치 가능.  
 ```$ chmod +x gradlew  ```  
+### Swagger
+Spring 소스코드에서 규칙에 따라 내용 입력 시,
+API 문서를 자동으로 생성해주는 도구입니다.
+확인 가능한 주소 : http://localhost:8080/swagger-ui.html  
