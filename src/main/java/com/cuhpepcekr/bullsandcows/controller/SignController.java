@@ -11,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @Api(tags = {"Sign"})
@@ -28,18 +28,15 @@ public class SignController {
 
     @ApiOperation(value = "로그인", notes = "로그인합니다.")
     @PostMapping(value = "/signin")
-    public String signIn(@ApiParam(value = "아이디", required = true) @RequestParam String username,
-                         @ApiParam(value = "비밀번호", required = true) @RequestParam String password) {
+    public String signIn(@ApiParam(value = "User", required = true) @RequestBody User user) {
 
-        return signService.signIn(User.builder().username(username).password(password).build());
+        return signService.signIn(user);
     }
 
     @ApiOperation(value = "가입", notes = "회원 가입합니다.")
     @PostMapping(value = "/signup")
-    public ResponseEntity<?> signUp(@ApiParam(value = "아이디", required = true) @RequestParam String username,
-                                    @ApiParam(value = "비밀번호", required = true) @RequestParam String password,
-                                    @ApiParam(value = "이름", required = true) @RequestParam String name) {
-        signService.signUp(User.builder().username(username).password(password).name(name).build());
+    public ResponseEntity<?> signUp(@ApiParam(value = "User", required = true) @RequestBody User user) {
+        signService.signUp(user);
         return new ResponseEntity<>(HttpStatus.CREATED);
 
     }
