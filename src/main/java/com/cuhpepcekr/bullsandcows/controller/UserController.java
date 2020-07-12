@@ -3,6 +3,8 @@ package com.cuhpepcekr.bullsandcows.controller;
 import com.cuhpepcekr.bullsandcows.entity.User;
 import com.cuhpepcekr.bullsandcows.service.UserService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +21,9 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "X-AUTH-TOKEN", value = "JWT", required = true, dataType = "String", paramType = "header")
+    })
     @ApiOperation(value = "모든 회원 조회", notes = "모든 회원을 조회합니다.")
     @GetMapping(value = "/users")
     public List<User> getUsers() {

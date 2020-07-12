@@ -1,7 +1,7 @@
 package com.cuhpepcekr.bullsandcows;
 
 import com.cuhpepcekr.bullsandcows.entity.User;
-import com.cuhpepcekr.bullsandcows.repository.UserRepository;
+import com.cuhpepcekr.bullsandcows.service.SignService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +13,7 @@ import java.util.List;
 class BullsandcowsApplicationTests {
 
     @Autowired
-    UserRepository userRepository;
+    SignService signService;
 
     @Test
     void contextLoads() {
@@ -22,8 +22,11 @@ class BullsandcowsApplicationTests {
     @Test
     void initialData() {
         List<User> users = new ArrayList<User>();
-        users.add(User.builder().username("testusername1").password("testpassword1").name("testname1").build());
-        users.add(User.builder().username("testusername2").password("testpassword2").name("testname2").build());
-        userRepository.saveAll(users);
+        users.add(User.builder().username("test1").password("1234").name("testname1").build());
+        users.add(User.builder().username("test2").password("1234").name("testname2").build());
+
+        for (User user : users) {
+            signService.signUp(user);
+        }
     }
 }
